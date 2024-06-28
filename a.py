@@ -172,6 +172,85 @@ print(cubes)
 
 lists = bodmas.lists_calue(value)    
 
+
+#next 
+
+
+class Animal:
+    def __init__(self, name):
+        print("Constructor invoked")
+        self.__name = name        # __ is used to make the attribute private   in other language it uses private
+        
+    def eat(self):
+        print(self.__name)
+        print("I can eat")
+        
+    def sleep(self):
+        print("I can Sleep") 
+        
+        
+animal = Animal("Arjun")
+
+#Arjun = animal()
+animal.eat()
+#print("Arjun")        \\
+    
+class Dog(Animal):
+    def bark(self):
+        print("I can bark")
+        
+
+dog1 = Dog("German Shephard")
+dog1.eat()        
+
+
+
+print("\n")
+
+
+class BankAccount():
+    def __init__(self,account_number,balance):
+        self._account_number = account_number  # _ one underscore means protected
+        self._balance = balance
+        
+    # def __deposit(self,amount):  # This is private as it has __
+    #     self._balance += amount
+    #     print(f"Deposit successful. New balance ${self._balance}")
+        
+        
+    def deposit(self,amount):  # This is private as it has __
+        self._balance += amount
+        print(f"Deposit successful. New balance ${self._balance}")    
+        
+        
+    def check_balance(self):
+        print(f"current balance ${self._balance}")
+        
+    def withdraw(self,amount):
+        self._balance -= amount
+        print(f"Withdraw successful. New Balance ${self._balance}")
+        
+        
+        
+bank = BankAccount("3434", 2000)
+bank.deposit(200)
+
+bank.check_balance()
+
+bank.withdraw(3000)
+bank.check_balance()        
+                        
+            
+        
+        
+        
+            
+               
+        
+        
+        
+
+
         
         
         

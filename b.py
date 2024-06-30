@@ -105,5 +105,93 @@ manager = Manager("Anish", 323, 234)
 developer = Developer("Akash", 223, "Python")
 developer.display_info()
                 
+print("\n")        
+
+#polymorphism
+class Shape:
+    def area(self):
+        pass
+    
+class Circle(Shape):
+    def __init__(self,radius):
+        self.radius = radius
+    
+    def area(self):
+        return 3.14 * self.radius **2
+    
+    
+class Rectangle(Shape):
+    def __init__(self, length, width ):
+        self.length = length
+        self.width = width 
         
+    def area(self):
+        return self.length * self.width
+    
+
+def print_area(shape):
+    print("Area :", shape.area()) 
+    
+reactangle = Rectangle(4,5)
+circle = Circle(5)
+
+print_area(reactangle)  
+
+
+
+class Animaal:
+    def speak(self):
+        pass
+    
+class Dog(Animaal):
+    def speak(self):
+        return "Bhow Bhow"
+    
+class Cat(Animaal):
+    def speak(self):
+        return "Meow Meow"
+    
+
+def print_animal(sound):
+    print(sound.speak())
+
+# dog = Dog()
+# cat = Cat()
+    
+animal_list = [Dog(), Cat()]     
+
+for animals in animal_list:
+    print_animal(animals)     
+    
+
+print("\n")
+
+class Employee:
+    def __init__ (self, name):
+        self.name = name
         
+    def calculate_salary(self):
+        pass
+    
+
+class FullTimeEmployee(Employee):
+    def calculate_salary(self):
+        return 50000
+    
+class PartTimeEmployee(Employee):
+    def calculate_salary(self):
+        return 25000
+    
+    
+employee = [FullTimeEmployee("Akash"), PartTimeEmployee("Bob")]
+
+
+
+for employees in employee:
+    print(f" {employees.name} salary is : {employees.calculate_salary()}")
+                        
+     
+         
+  
+                 
+            
